@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Organize View</h2>
+    <form ng-submit="addTrip()" role="form">
+        <input type="text" ng-model="trip" placeholder="Title" class="form-control">
+        <input type="text" placeholder="Date From" id="datepicker-from" class="form-control">
+        <input type="text" placeholder="Date To" id="datepicker-to" class="form-control">
+        <input type="text" ng-model="trip" placeholder="Where is the next trip?" class="form-control">
+        <input type="text" ng-model="trip" placeholder="Where is the next trip?" class="form-control">
+        <span class="input-group-btn">
+          <input type="submit" class="btn btn-primary" value="Add">
+        </span>
+    </form>
+
+    <form ng-submit="clearAll()" role="form">
+        <span class="input-group-btn">
+          <input type="submit" class="btn btn-primary" value="Clear">
+        </span>
+    </form>
+
+
+    <script>
+        $(function() {
+            $( "#datepicker-from" ).datepicker();
+            $( "#datepicker-to" ).datepicker();
+        });
+    </script>
+</div>
