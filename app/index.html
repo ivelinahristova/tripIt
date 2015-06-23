@@ -12,6 +12,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+      <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.css">
     <!-- endbuild -->
   </head>
   <body ng-app="tripItApp">
@@ -37,11 +38,13 @@
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
-            </ul>
+              <ul class="nav navbar-nav">
+                  <li class="active"><a href="#/">Home</a></li>
+                  <li><a ng-href="#/map">Map View</a></li>
+                  <li><a ng-href="#/about">About</a></li>
+                  <li><a ng-href="#/organize">Organize a trip</a></li>
+                  <li><a ng-href="#/">Contact</a></li>
+              </ul>
           </div>
         </div>
       </div>
@@ -53,7 +56,7 @@
 
     <div class="footer">
       <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        <p></p>
       </div>
     </div>
 
@@ -80,13 +83,16 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/organize.js"></script>
         <!-- endbuild -->
 </body>
 </html>
