@@ -1,0 +1,33 @@
+<div class="container">
+    <h2>{{trip.name}}</h2>
+    <h4>{{trip.dateStart}} - {{trip.dateEnd}}</h4>
+    <div id="trip-tabs">
+        <ul>
+            <li><a href="#about">Basic Information</a></li>
+            <li><a href="#details">Details</a></li>
+        </ul>
+        <div id="about">
+            <label>Description: </label>
+            {{trip.description}}
+        </div>
+        <div id="details">
+            <input type="text" ng-model="tripArea" placeholder="Area" class="form-control">
+            <input type="text" ng-model="tripStartPoint" placeholder="Start Point" class="form-control">
+            <input type="text" ng-model="tripStartPointLat" placeholder="Start Point Latitude" class="form-control">
+            <input type="text" ng-model="tripStartPointLong" placeholder="Start Point Longtitude" class="form-control">
+
+            <input type="checkbox" ng-model="tripRide" name="ride" value="yes">Organized ride<br>
+        </div>
+    </div>
+
+    <script>
+        $(function() {
+            $( "#datepicker-from" ).datepicker();
+            $( "#datepicker-to" ).datepicker();
+        });
+
+        $(function() {
+            $( "#trip-tabs" ).tabs();
+        });
+    </script>
+</div>

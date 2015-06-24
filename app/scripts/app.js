@@ -36,6 +36,10 @@ angular
                 templateUrl: 'views/organize.html',
                 controller: 'OrganizeCtrl'
             })
+            .when('/trip/:param1', {
+                templateUrl: 'views/trip.html',
+                controller: 'TripCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });

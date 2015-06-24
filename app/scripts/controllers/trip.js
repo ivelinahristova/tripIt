@@ -8,12 +8,14 @@
  * Controller of the tripItApp
  */
 angular.module('tripItApp')
-    .controller('OrganizeCtrl', function ($scope, localStorageService) {
+    .controller('TripCtrl', function ($scope, localStorageService, $routeParams) {
         $scope.storageType = localStorageService.getStorageType();
 
         $scope.clearAll = function() {
             localStorageService.clearAll();
         };
+
+        $scope.trip = localStorageService.get($routeParams.param1);
 
         $scope.addTrip = function () {
 
@@ -24,7 +26,7 @@ angular.module('tripItApp')
                 dateStart: $scope.tripDateStart,
                 dateEnd: $scope.tripDateEnd,
                 description: $scope.tripDescription,
-                link: '#/trip/' +  tripId
+                link: '/trip/' +  tripId
             };
 
             localStorageService.set(tripId, trip);
