@@ -24,6 +24,10 @@ angular.module('tripItApp')
                 dateStart: $scope.tripDateStart,
                 dateEnd: $scope.tripDateEnd,
                 description: $scope.tripDescription,
+                area: $scope.tripArea,
+                startPoint: $scope.tripStartPoint,
+                startPointLat: $scope.tripStartPointLat,
+                startPointLng: $scope.tripStartPointLong,
                 link: '#/trip/' +  tripId
             };
 

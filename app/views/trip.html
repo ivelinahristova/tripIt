@@ -11,16 +11,36 @@
             {{trip.description}}
         </div>
         <div id="details">
-            <input type="text" ng-model="tripArea" placeholder="Area" class="form-control">
-            <input type="text" ng-model="tripStartPoint" placeholder="Start Point" class="form-control">
-            <input type="text" ng-model="tripStartPointLat" placeholder="Start Point Latitude" class="form-control">
-            <input type="text" ng-model="tripStartPointLong" placeholder="Start Point Longtitude" class="form-control">
+            <div>
+                <label>Area: </label>
+                {{trip.area}}
+            </div>
 
+            <div>
+                <label>Start Point: </label>
+                {{trip.startPoint}}
+            </div>
+            <div style="height: 500px; width: 600px;
+        margin: 0px;
+        padding: 0px" id="map"></div>
+            <label id="latitude">{{trip.startPointLat}}</label>
+            <label id="longtitude">{{trip.startPointLng}}</label>
             <input type="checkbox" ng-model="tripRide" name="ride" value="yes">Organized ride<br>
         </div>
     </div>
 
     <script>
+        var map;
+        function initialize() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 8,
+                center: {lat: $("#latitude").html(), lng: $("#longtitude").html()}
+            });
+        }
+//        initialize();
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+
         $(function() {
             $( "#datepicker-from" ).datepicker();
             $( "#datepicker-to" ).datepicker();
