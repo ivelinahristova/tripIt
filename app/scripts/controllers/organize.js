@@ -18,13 +18,15 @@ angular.module('tripItApp')
         $scope.addTrip = function () {
 
             var length = localStorageService.get('trips') ? localStorageService.get('trips').length : 0;
-
+            var tripId = 'trip' + localStorageService.length();
             var trip = {
-                name: $scope.trip,
-                link: '/trip/' +  length
+                name: $scope.tripName,
+                dateStart: $scope.tripDateStart,
+                dateEnd: $scope.tripDateEnd,
+                description: $scope.tripDescription,
+                link: '/trip/' +  tripId
             };
 
-            var tripId = 'trip' + localStorageService.length();
             localStorageService.set(tripId, trip);
 
             console.log(localStorageService.keys());
