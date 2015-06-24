@@ -16,4 +16,18 @@ angular.module('tripItApp')
         };
 
         $scope.trip = localStorageService.get($routeParams.param1);
+
+        $scope.map = {
+            center: {
+                latitude: $scope.trip.startPointLat,
+                longitude: $scope.trip.startPointLng
+            },
+            markers: [{
+                latitude: $scope.trip.startPointLat,
+                longitude: $scope.trip.startPointLng
+            }],
+            zoom: 8
+        }
+
+
     });

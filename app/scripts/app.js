@@ -16,7 +16,8 @@ angular
         'ngRoute',
         'ngSanitize',
         'ngTouch',
-        'LocalStorageModule'
+        'LocalStorageModule',
+        'uiGmapgoogle-maps'
     ])
     .config(function ($routeProvider) {
         $routeProvider
@@ -46,4 +47,12 @@ angular
     },function (localStorageServiceProvider) {
         localStorageServiceProvider
             .setStorageType('sessionStorage');
-    });
+    },
+
+    ['uiGmapGoogleMapApiProvider', function(GoogleMapApiProviders) {
+        GoogleMapApiProvider.configure({
+            china: true
+        });
+    }]
+
+);
